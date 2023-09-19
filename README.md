@@ -29,18 +29,51 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 **Amazon Athena (Analytics Query):** Amazon Athena is an interactive query service that simplifies the analysis of data in Amazon S3 using standard SQL. You can use it to analyze data stored in your Glue Data Catalog or other S3 buckets.
 
 
+## Tech Stack
+
+**Programming Language**
+- Python 
+
+**AWS cloud** 
+- AWS Simple Storage (S3)
+- AWS Lambda
+- AWS Cloudwatch Events
+- AWS Crawler
+- AWS Glue
+- AWS Athena
+
+**Data Visualization** 
+- Streamlight
+
+## Pipeline
+
+1. Data Extraction
+- AWS Lambda function triggered daily by CloudWatch
+- Fetches the latest data from Spotify
+- Uploads raw data upon successful extraction
+2. Data Transformation
+- Triggered automatically after data extraction
+- Transforms newly uploaded raw data
+- Moves transformed data to respective folders
+- Removes raw data to keep it clean
+3. Data Loading
+- Loads transformed data into AWS Athena
+- Provides a centralized database for analytics
+- Enables generating insights and reports
 
 
+# Conclusion
+
+This end-to-end data pipeline project provided great experience in designing and implementing an automated ETL process using AWS cloud services. 
+
+Building the extraction, transformation, and loading modules required learning new skills like AWS Lambda, CloudWatch, S3, Glue, Athena, and Python. The project demonstrated how these services can be integrated to ingest, process, store, and analyze data efficiently at scale.
+
+Automating the pipeline with triggers and schedulers was an important learning. This ensures latest data is processed daily without any manual intervention.
+
+Transforming the raw JSON data into an optimized CSV structure required problem-solving skills to parse and clean the data into the target schema.
+
+Loading the processed data into S3 and Athena enabled running SQL queries on terabytes of data and generating insights rapidly. These are powerful big data capabilities unlocked by the pipeline.
+
+Overall, this project provided hands-on experience in architecting, developing, and deploying a robust data pipeline on AWS. The skills learned will be invaluable for tackling more complex data engineering challenges in the future.
 
 
-
-
-## Project Components:
-
-**Data Extraction:** Python code, aided by the Spotify library, fetched music data directly from Spotify, and subsequently, it was stored in AWS S3.
-
-**Automated Data Transformation:** I designed AWS Lambda functions to efficiently convert JSON data into structured tables, encompassing songs, albums, and artists.
-
-**AWS Lambda Functions:** These serverless functions automated the entire data processing pipeline whenever new data became available.
-
-**Amazon S3** Transformed data was stored in AWS S3
