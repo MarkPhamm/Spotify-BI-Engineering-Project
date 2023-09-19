@@ -8,7 +8,7 @@ In this project, we will build an ETL (Extract, Transform, Load) pipeline using 
 * Build a large dataset, update it every week, and from there, generate insight
 
 **Objective:**
-Seamlessly integrated Spotify API to extract and analyze music data. 🎶 Leveraging Python, Amazon Web Services (AWS), and Snowflake, by building an end-to-end data pipeline to process, transform, and visualize Spotify's rich music data.
+Seamlessly integrated Spotify API to extract and analyze music data. 🎶 Leveraging Python, Amazon Web Services (AWS), and Amazon Quicksight, by building an end-to-end data pipeline to process, transform, and visualize Spotify's rich music data.
 The primary objective was to extract valuable insights from Spotify's extensive music catalog while constructing a comprehensive data pipeline to automate the entire process.
 
 ## Architecture:
@@ -43,7 +43,7 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 - AWS Athena
 
 **Data Visualization** 
-- Streamlight
+- Amazon Quicksight
 
 ## Pipeline
 
@@ -72,7 +72,7 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 - Step 8: Build a crawler to collect data for anthena. 
 - Step 9: Define the schema with AWS Glue. 
 - Step 10: Analysing data with Athena. 
-- Step 11: Use quicksight to visualize data.
+- Step 11: Use Amazon Quicksight to visualize data.
 
 ## Conclusion
 
