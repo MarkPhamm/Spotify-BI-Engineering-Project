@@ -61,8 +61,20 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 - Provides a centralized database for analytics
 - Enables generating insights and reports
 
+## Project description
+- Step 1: Using Jupyter Notebook, test data and read JSON: RapidAPI -> Format dataframe -> planning structure. 
+- Step 2: Create a trigger and run a cronjob every day to receive messages. 
+- Step 3: Design a Lambda function to receive the trigger and extract the data. 
+- Step 4: Save data to S3 storage as raw data for later transformation. 
+- Step 5: Add a trigger to receive event and store the object in S3. 
+- Step 6: Write a Lambda function that receives object triggers and converts data to structure format (CSV).
+- Step 7: Save the data as transformation data to S3. 
+- Step 8: Build a crawler to collect data for anthena. 
+- Step 9: Define the schema with AWS Glue. 
+- Step 10: Analysing data with Athena. 
+- Step 11: Use quicksight to visualize data.
 
-# Conclusion
+## Conclusion
 
 This end-to-end data pipeline project provided great experience in designing and implementing an automated ETL process using AWS cloud services. 
 
