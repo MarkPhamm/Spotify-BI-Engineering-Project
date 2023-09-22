@@ -24,6 +24,7 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 
 - **Amazon Athena (Analytics Query):** Amazon Athena is an interactive query service that simplifies the analysis of data in Amazon S3 using standard SQL. You can use it to analyze data stored in your Glue Data Catalog or other S3 buckets.- 
 
+**Visualization tool** 
 - **Amazon QuiqckSight (Data Visualization):** Amazon Quicksight is a cloud-based business intelligence service launched by Amazon Web Services in 2018 that provides fast, easy-to-use data visualization and analytics for companies to gain insights from their data.
 
 
