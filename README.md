@@ -8,8 +8,8 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 ## Technology Used
 
 **Programming Language**
-- Python
-- SQL
+- **Python:** We will use Python to create Lambda functions for the ETL pipeline
+- **SQL:** We will leverage SQL queries for analysis on Amazon Athena
 
 **AWS cloud** 
 - **Amazon S3 (Storage):** Amazon S3 is a highly scalable object storage service that enables you to store and retrieve data of any size from anywhere on the web. It is commonly used for storing and distributing large media files, data backups, and static website files. 
