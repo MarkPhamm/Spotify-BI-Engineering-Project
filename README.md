@@ -28,6 +28,7 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 
 
 ## Architecture:
+![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/72f136f2-4ebd-4892-9685-f1bf552e2cd5)
 
 
 ## Pipeline
