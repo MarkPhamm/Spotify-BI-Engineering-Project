@@ -11,7 +11,26 @@ In this project, we will build an ETL (Extract, Transform, Load) pipeline using 
 Seamlessly integrated Spotify API to extract and analyze music data. 🎶 Leveraging Python, Amazon Web Services (AWS), and Amazon Quicksight, by building an end-to-end data pipeline to process, transform, and visualize Spotify's rich music data.
 The primary objective was to extract valuable insights from Spotify's extensive music catalog while constructing a comprehensive data pipeline to automate the entire process.
 
+## Tech Stack
+
+**Programming Language**
+- Python
+- SQL
+
+**AWS cloud** 
+- AWS Simple Storage (S3)
+- AWS Lambda
+- AWS Cloudwatch Events
+- AWS Crawler
+- AWS Glue
+- AWS Athena
+
+**Data Visualization** 
+- Amazon Quicksight
+
+
 ## Architecture:
+
 
 
 
@@ -28,51 +47,34 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 
 **Amazon Athena (Analytics Query):** Amazon Athena is an interactive query service that simplifies the analysis of data in Amazon S3 using standard SQL. You can use it to analyze data stored in your Glue Data Catalog or other S3 buckets.
 
-
-## Tech Stack
-
-**Programming Language**
-- Python 
-
-**AWS cloud** 
-- AWS Simple Storage (S3)
-- AWS Lambda
-- AWS Cloudwatch Events
-- AWS Crawler
-- AWS Glue
-- AWS Athena
-
-**Data Visualization** 
-- Amazon Quicksight
-
 ## Pipeline
+a. Test Spotify Api using Jupiter notebook
+  - Step 1: Using Jupyter Notebook, test data and read JSON: RapidAPI, format dataframe, and create planning structure.
 
-1. Data Extraction
-- AWS Lambda function triggered daily by CloudWatch
-- Fetches the latest data from Spotify
-- Uploads raw data upon successful extraction
-2. Data Transformation
-- Triggered automatically after data extraction
-- Transforms newly uploaded raw data
-- Moves transformed data to respective folders
-- Removes raw data to keep it clean
-3. Data Loading
-- Loads transformed data into AWS Athena
-- Provides a centralized database for analytics
-- Enables generating insights and reports
+b. Data Extraction via Python on AWS
+  - Step 2: Use Python to create an AWS Lambda function to fetch the latest data from Spotify
+  - Step 3: Create a trigger and run a cronjob every day to receive messages triggered daily by CloudWatch
+  - Step 3: Save data to S3 storage as raw data for later transformation
+![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/fcc33811-0f81-4d55-9528-7fa99e8ddbc9)
 
-## Project description
-- Step 1: Using Jupyter Notebook, test data and read JSON: RapidAPI -> Format dataframe -> planning structure. 
-- Step 2: Create a trigger and run a cronjob every day to receive messages. 
-- Step 3: Design a Lambda function to receive the trigger and extract the data. 
-- Step 4: Save data to S3 storage as raw data for later transformation. 
-- Step 5: Add a trigger to receive event and store the object in S3. 
-- Step 6: Write a Lambda function that receives object triggers and converts data to structure format (CSV).
-- Step 7: Save the data as transformation data to S3. 
-- Step 8: Build a crawler to collect data for anthena. 
-- Step 9: Define the schema with AWS Glue. 
-- Step 10: Analysing data with Athena. 
-- Step 11: Use Amazon Quicksight to visualize data.
+
+c. Data Transformation
+  - Step 4: Write a Lambda function that receives object triggers and converts data to structure format (CSV)
+  - Step 5: Add a trigger to receive the event and store the object in S3
+  - Step 5: Save the data as transformation data to S3 Buckets
+![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/8ea17e9c-3ae2-492e-ac36-b10ac96f4385)
+
+
+d. Data Loading
+- Step 8: Build a crawler to collect data for Athena
+- Step 9: Define the schema with AWS Glue
+![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/c71eabaa-8cef-4c17-8435-190fe45a637c)
+
+
+3. Ananlyze, Create Dashboard and Reports
+- Step 10: Analysing data with Athena
+- Step 11: Connect Amazon Quicksight to Athena
+- Step 12: Create keys KPI on Amazon Quicksight, build graphs and charts to communicate key insights
 
 ## Conclusion
 
