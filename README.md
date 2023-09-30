@@ -58,6 +58,8 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 
 ![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/c71eabaa-8cef-4c17-8435-190fe45a637c)
 
+![image](https://github.com/MarkPhamm/Spotify-BI-Engineering-Project/assets/99457952/d2bdcea1-3f4d-45e6-8b32-566f982bf3a5)
+
 
 ### **e. Analyze, Create Dashboard and Reports**
 - Step 10: Analysing data with Athena
