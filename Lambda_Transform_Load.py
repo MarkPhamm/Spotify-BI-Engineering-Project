@@ -4,6 +4,9 @@ from datetime import datetime
 from io import StringIO
 import pandas as pd 
 
+now = datetime.now().date()
+
+# create function album
 def album(data):
     album_list = []
     for row in data['items']:
@@ -17,6 +20,8 @@ def album(data):
         album_list.append(album_element)
     return album_list
     
+    
+# create function artist
 def artist(data):
     artist_list = []
     for row in data['items']:
@@ -26,7 +31,8 @@ def artist(data):
                     artist_dict = {'artist_id':artist['id'], 'artist_name':artist['name'], 'external_url': artist['href']}
                     artist_list.append(artist_dict)
     return artist_list
-    
+
+# create function songs
 def songs(data):
     song_list = []
     for row in data['items']:
@@ -46,6 +52,7 @@ def songs(data):
         
     return song_list
     
+# Create function lambda_handler
 def lambda_handler(event, context):
     s3 = boto3.client('s3')
     Bucket = "spotify-bi-engineering-project"
@@ -67,17 +74,23 @@ def lambda_handler(event, context):
         artist_list = artist(data)
         song_list = songs(data)
         
+        # album_Dataframe
         album_df = pd.DataFrame.from_dict(album_list)
         album_df = album_df.drop_duplicates(subset=['album_id'])
+        album_df['release_date'] = pd.to_datetime(album_df['release_date'],format='mixed')
+        album_df = album_df.rename(columns={'name': 'album_name'})
+        album_df['album_name'] = album_df['album_name'].str.replace(',', ';')
         
+        # artist_Dataframe
         artist_df = pd.DataFrame.from_dict(artist_list)
         artist_df = artist_df.drop_duplicates(subset=['artist_id'])
+        artist_df['artist_name'] = artist_df['artist_name'].str.replace(',', ';')
         
-        #Song Dataframe
+        # song Dataframe
         song_df = pd.DataFrame.from_dict(song_list)
-        
-        album_df['release_date'] = pd.to_datetime(album_df['release_date'])
-        song_df['song_added'] =  pd.to_datetime(song_df['song_added'])
+        song_df['song_added'] =  pd.to_datetime(song_df['song_added'],format='mixed')
+        song_df['record_date'] = now
+        song_df['song_name'] = song_df['song_name'].str.replace(',', ';')
         
         songs_key = "transformed_data/songs_data/songs_transformed_" + str(datetime.now()) + ".csv"
         song_buffer=StringIO()
