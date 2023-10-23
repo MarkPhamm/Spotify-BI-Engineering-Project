@@ -66,7 +66,7 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 - Step 11: Connect Amazon Quicksight to Athena
 - Step 12: Create keys KPI on Amazon Quicksight, build graphs and charts to communicate key insights
 
-## Key Learning
+## Key Learning:
 
 * Building ETL modules required learning new skills like AWS Lambda, CloudWatch, S3, Glue, Athena, and Python. The project demonstrated how these services can be integrated to ingest, process, store, and analyze data efficiently at scale.
 
