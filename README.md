@@ -66,16 +66,38 @@ The primary objective was to extract valuable insights from Spotify's extensive 
 - Step 11: Connect Amazon Quicksight to Athena
 - Step 12: Create keys KPI on Amazon Quicksight, build graphs and charts to communicate key insights
 
-## Conclusions and Key Learning
+## Key Learning
 
-* Building the extraction, transformation, and loading modules required learning new skills like AWS Lambda, CloudWatch, S3, Glue, Athena, and Python. The project demonstrated how these services can be integrated to ingest, process, store, and analyze data efficiently at scale.
+* Building ETL modules required learning new skills like AWS Lambda, CloudWatch, S3, Glue, Athena, and Python. The project demonstrated how these services can be integrated to ingest, process, store, and analyze data efficiently at scale.
 
-* Automating the pipeline with triggers and schedulers was an important learning. This ensures latest data is processed daily without any manual intervention.
+* Automating the pipeline with triggers and schedulers was an important learning. This ensures that the latest data is processed daily without any manual intervention.
 
 * Transforming the raw JSON data into an optimized CSV structure required problem-solving skills to parse and clean the data into the target schema.
 
 * Loading the processed data into S3 and Athena enabled running SQL queries on terabytes of data and generating insights rapidly. These are powerful big data capabilities unlocked by the pipeline.
 
 * Overall, this project provided hands-on experience in architecting, developing, and deploying a robust data pipeline on AWS. The skills learned will be invaluable for tackling more complex data engineering challenges in the future.
+
+## Key Challenges Overcome:
+
+Throughout the project, we encountered and successfully resolved a series of intricate challenges, including:
+
+1. **Complex JSON to CSV Conversion:** Handling the intricate JSON structure and ensuring a seamless conversion process demanded comprehensive data parsing techniques and meticulous attention to detail.
+
+2. **Configuring Robust Daily Job Scheduling:** Establishing a reliable and efficient daily job scheduling system required extensive testing and fine-tuning to guarantee the timely and accurate execution of critical data processing tasks.
+
+3. **Ensuring Uniformity in Date Formats:** Overcoming the complications arising from varying date formats within the dataset necessitated the implementation of rigorous data standardization protocols to ensure consistent and reliable analytics outcomes.
+
+4. **Debugging and Optimizing Lambda Functions:** Addressing intricate bugs and performance bottlenecks within the Lambda functions demanded a meticulous debugging process and a thorough understanding of the AWS Lambda environment.
+
+## Key Insights Uncovered:
+
+Our in-depth data analysis unearthed compelling insights that have significantly contributed to our understanding of the Spotify music landscape, including:
+
+1. **Robust Presence of Korean Artists:** Uncovering a substantial presence of Korean artists within the Spotify music library shed light on the increasing global influence and popularity of K-pop and related genres.
+
+2. **Consistent Dominance of Select Songs:** Analyzing the consistent presence of songs such as "Binding Lights," "Shape of You," and "Someone You Loved" in the top three rankings unveiled the enduring impact and popularity of these timeless tracks within the global music scene.
+
+3. **Stable Rankings with Minimal Fluctuations:** Identifying minimal fluctuations in song rankings emphasized the stable and enduring nature of certain musical preferences and the continued resonance of specific genres and artists with Spotify's diverse user base.
 
 
